@@ -1,0 +1,123 @@
+
+const navToggle = document.querySelector("[data-toggle]");
+const nav = document.querySelector("[data-nav]");
+navToggle?.addEventListener("click", () => nav.classList.toggle("open"));
+nav?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+function sponsorBand() {
+  const el = document.querySelector("[data-sponsors]");
+  if (!el) return;
+  el.innerHTML = `
+    <h3><span>Thank you to our</span>Event Sponsors</h3>
+    ${SITE_DATA.sponsors.map(s => `<div class="sponsor-logo">${s.initials}<small>${s.name}</small></div>`).join("")}
+  `;
+}
+
+function featuredMembers() {
+  const el = document.querySelector("[data-featured-members]");
+  if (!el) return;
+  el.innerHTML = SITE_DATA.featuredMembers.map(m => `
+    <article class="feature-card">
+      <div class="badge">${m.initials}</div>
+      <h4>${m.name}</h4>
+      <p>${m.description}</p>
+      <small>${m.category}</small>
+    </article>
+  `).join("");
+}
+
+function photoPath(photo, context) {
+  if (!photo) return "";
+  if (context === "home") return photo.replace("../", "");
+  if (context === "bio") return photo.replace("../", "../../");
+  return photo;
+}
+
+function leaderPreview() {
+  const el = document.querySelector("[data-leader-preview]");
+  if (!el) return;
+  el.innerHTML = SITE_DATA.leaders.map((l) => `
+    <a class="leader-inline leader-link" href="pages/bios/${l.slug}.html" aria-label="View bio for ${l.name}">
+      <img class="avatar" src="${photoPath(l.photo, "home")}" alt="${l.name}">
+      <div><strong>${l.name}</strong><span>${l.role}<br>${l.term}</span></div>
+    </a>
+  `).join("");
+}
+
+function fullLeadership() {
+  const el = document.querySelector("[data-leader-grid]");
+  if (!el) return;
+  el.innerHTML = SITE_DATA.leaders.map((l) => `
+    <a class="leader-card leader-card-link" href="bios/${l.slug}.html" aria-label="View bio for ${l.name}">
+      <img class="avatar" src="${photoPath(l.photo, "page")}" alt="${l.name}">
+      <h4>${l.name}</h4>
+      <p>${l.role}</p>
+      <span class="term">${l.term}</span>
+      <small class="leader-email">${l.email || ""}</small>
+      <span class="view-bio">View Bio →</span>
+    </a>
+  `).join("");
+}
+
+function fullLeadershipHome() {
+  const el = document.querySelector("[data-leader-grid-home]");
+  if (!el) return;
+  el.innerHTML = SITE_DATA.leaders.map((l) => `
+    <a class="leader-card leader-card-link" href="#bio-${l.slug}" aria-label="View bio for ${l.name}">
+      <img class="avatar" src="${photoPath(l.photo, "home")}" alt="${l.name}">
+      <h4>${l.name}</h4>
+      <p>${l.role}</p>
+      <span class="term">${l.term}</span>
+      <small class="leader-email">${l.email || ""}</small>
+      <span class="view-bio">View Bio →</span>
+    </a>
+  `).join("");
+}
+
+function bioBlocksHome() {
+  const el = document.querySelector("[data-bio-blocks-home]");
+  if (!el) return;
+  el.innerHTML = SITE_DATA.leaders.map((l) => `
+    <article class="bio-inline-card" id="bio-${l.slug}">
+      <div class="bio-inline-photo"><img src="${photoPath(l.photo, "home")}" alt="${l.name}"></div>
+      <div>
+        <div class="eyebrow">Leadership Bio</div>
+        <h3>${l.name}</h3>
+        <p class="bio-role">${l.role} · ${l.term}</p>
+        <p>${l.bio}</p>
+        <p><a href="mailto:${l.email}">${l.email}</a></p>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderMembers() {
+  const el = document.querySelector("[data-member-grid]");
+  if (!el) return;
+  const search = (document.querySelector("[data-search]")?.value || "").toLowerCase();
+  const filter = document.querySelector("[data-filter]")?.value || "all";
+  const filtered = SITE_DATA.members.filter(m => {
+    const txt = `${m.name} ${m.category} ${m.location || ""} ${m.description}`.toLowerCase();
+    return txt.includes(search) && (filter === "all" || txt.includes(filter));
+  });
+  el.innerHTML = filtered.map(m => `
+    <article class="member-card">
+      <div class="member-badge">${m.initials}</div>
+      <h4>${m.name}</h4>
+      <p>${m.description}</p>
+      <small>${m.category}</small>
+      <small>${m.location || ""}</small>
+    </article>
+  `).join("") || `<p>No members match this search.</p>`;
+}
+
+document.querySelector("[data-search]")?.addEventListener("input", renderMembers);
+document.querySelector("[data-filter]")?.addEventListener("change", renderMembers);
+
+sponsorBand();
+featuredMembers();
+leaderPreview();
+fullLeadership();
+fullLeadershipHome();
+bioBlocksHome();
+renderMembers();

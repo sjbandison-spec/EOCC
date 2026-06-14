@@ -1,0 +1,19 @@
+# EOCC Website V12 Full Operational Board Demo
+
+Open `index.html` locally, or upload the contents of this folder to GitHub Pages.
+
+## GitHub Pages
+1. Create a GitHub repo.
+2. Upload the CONTENTS of this folder, not the folder itself.
+3. Make sure `index.html` is at the repo root.
+4. Go to Settings → Pages.
+5. Source: Deploy from a branch.
+6. Branch: main.
+7. Folder: /root.
+8. Save and wait for the live link.
+
+## Codex
+Load this folder in Codex and paste the instructions in `CODEX_PROMPT.txt`.
+
+## JoinIt
+https://app.joinit.com/o/east-orange-chamber-of-commerce/
