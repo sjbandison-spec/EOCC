@@ -1,0 +1,61 @@
+window.EOCC_DATA = {
+  membershipTiers: [
+    {
+      name: "Professional",
+      price: "Starter Access",
+      featured: false,
+      description: "For professionals, creatives, consultants, and entrepreneurs looking to connect and be seen.",
+      benefits: ["Event access", "Directory listing", "Networking opportunities", "Chamber communications"]
+    },
+    {
+      name: "Small Business",
+      price: "Growth Access",
+      featured: true,
+      description: "For local businesses that want more visibility, more access, and more connection to the East Orange business community.",
+      benefits: ["Enhanced directory presence", "Spotlight opportunities", "Ribbon cutting eligibility", "Business resource access", "Event recognition"]
+    },
+    {
+      name: "Corporate / Partner",
+      price: "Leadership Access",
+      featured: false,
+      description: "For larger organizations, institutions, sponsors, and companies investing in East Orange’s future.",
+      benefits: ["Sponsor visibility", "Strategic partnership potential", "Leadership access", "Priority recognition", "Enhanced brand placement"]
+    }
+  ],
+  members: [
+    {
+      name: "Jelks Bandison Group, LLC",
+      initials: "JBG",
+      category: "Professional Services • Real Estate • Consulting",
+      tags: ["professional-services","real-estate"],
+      description: "A professional services and consulting firm supporting clients through real estate strategy, business consulting, project coordination, and community-centered development initiatives.",
+      location: "East Orange / NJ Metro",
+      website: "#",
+      linkText: "Website Coming Soon"
+    },
+    {
+      name: "UDS FreshAir Team",
+      initials: "UDS",
+      category: "Environmental Services • Grease Trap Cleaning • Used Cooking Oil",
+      tags: ["environmental-services"],
+      description: "Providing used cooking oil collection, grease trap cleaning, and fresh-air environmental services for restaurants, food service businesses, and commercial kitchens.",
+      location: "NJ / NY / PA Service Area",
+      website: "https://theudsfat.com",
+      linkText: "Visit Website"
+    }
+  ],
+  officers: [
+    { role: "President", name: "Monique M. Lewis", business: "Organization / Business Name", term: "Officer Term: 2026–2027" },
+    { role: "Vice President", name: "Simone Jelks-Bandison", business: "Jelks Bandison Group, LLC", term: "Officer Term: 2026–2027" },
+    { role: "Secretary", name: "Board Member Name", business: "Organization / Business Name", term: "Officer Term: 2026–2027" },
+    { role: "Treasurer", name: "Board Member Name", business: "Organization / Business Name", term: "Officer Term: 2026–2027" }
+  ],
+  directors: [
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2026–2028" },
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2025–2027" },
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2024–2026" },
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2026–2028" },
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2025–2027" },
+    { name: "Director Name", business: "Organization / Business Name", term: "Director Term: 2024–2026" }
+  ]
+};

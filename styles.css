@@ -1,24 +1,50 @@
-Keep this EOCC Version 12 website design and structure exactly as-is. This is the board review demo.
+# EOCC Fresh Urban Website — GitHub / Codex Ready
 
-Do not remove any section:
-- browser frame
-- hero
-- scrolling ticker
-- image cards
-- business climate stats
-- event sponsor bar
-- featured members
-- About
-- Membership
+This version is intentionally **more stylish, more urban, more current, and less stuffy**.
+
+## Design Direction
+
+This is for a city on the rise. The visual system is built to feel:
+
+- Fresh
+- Urban
+- Contemporary
+- Bold
+- Opportunity-driven
+- Culture-aware
+- Development-forward
+
+## Includes
+
+- Bold hero section
+- Contemporary color system
+- Membership tiers
+- Opportunity / development section
 - Events
-- Member Directory
-- Directors / Leadership
-- Leadership Bios
+- Searchable member directory
+- Leadership with terms
 - Resources
-- Contact
+- Join CTA
+- Contact form layout
 
-Every leadership photo/card must stay clickable and open that person’s bio page under pages/bios/.
-All Join EOCC / Become a Member links must point to:
-https://app.joinit.com/o/east-orange-chamber-of-commerce/
+## Edit content in
 
-Only make small cleanup changes if asked.
+- `data/site-data.js`
+
+## Good Codex prompts
+
+```txt
+Turn this into a multi-page chamber website while keeping the same visual direction and design language.
+```
+
+```txt
+Add a homepage section for redevelopment projects and business corridor spotlights.
+```
+
+```txt
+Replace placeholder leadership photos with real image cards and add social links.
+```
+
+```txt
+Create GitHub Pages deployment workflow and update the README.
+```
